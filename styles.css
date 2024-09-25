@@ -19,28 +19,28 @@ body {
   background-size: cover;
 }
 
-/* Title at top center */
+/* Title at top center with reduced size */
 .title-text {
   position: absolute;
   top: 20px;
   left: 50%;
   transform: translateX(-50%);
   font-family: 'Adelle', serif;
-  font-size: 1.7vw; /* Responsive size */
+  font-size: 1.5vw; /* Reduced font size */
   color: black;
   z-index: 3;
 }
 
-/* Main gradient with soft blending and less brightness */
+/* Main gradient with 70% opacity */
 .gradient-overlay {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: radial-gradient(circle, rgba(255,255,255,0.5), rgba(255,0,0,0.4), rgba(255,105,180,0.3), rgba(0,0,255,0.2));
+  background: radial-gradient(circle, rgba(255,255,255,0.7), rgba(255,0,0,0.6), rgba(255,105,180,0.5), rgba(0,0,255,0.4));
   background-size: 300% 300%; /* Enlarge background for smoother transitions */
-  opacity: 0.7; /* Softer gradient effect */
+  opacity: 0.7; /* Increased opacity to 70% */
   animation: flowColors 15s ease infinite;
   z-index: 1;
 }

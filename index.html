@@ -23,22 +23,26 @@
       background-size: cover;
     }
 
+    /* Main gradient with water-like motion */
     .gradient-overlay {
       position: absolute;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
-      background: linear-gradient(270deg, white, red, pink, yellow, blue);
+      background: radial-gradient(circle, white, red, pink, yellow, blue);
+      background-size: 300% 300%; /* Enlarge background for smoother transitions */
       opacity: 0.8;
-      animation: flowColors 10s ease-in-out infinite;
+      animation: flowColors 15s ease infinite;
       z-index: 1;
     }
 
     @keyframes flowColors {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
+      0% { background-position: 0% 0%; }
+      25% { background-position: 50% 50%; }
+      50% { background-position: 100% 100%; }
+      75% { background-position: 50% 50%; }
+      100% { background-position: 0% 0%; }
     }
 
     .main-text {
@@ -47,7 +51,7 @@
       text-align: center;
       z-index: 2;
       animation: blink 3s infinite ease-in-out, strobe 2s infinite alternate;
-      padding: 0 10px; /* Some padding for mobile screens */
+      padding: 0 10px;
     }
 
     @keyframes blink {
@@ -68,7 +72,7 @@
       color: black;
     }
 
-    /* Base font sizes for larger displays (desktops, laptops) */
+    /* Responsive text sizes for large screens */
     .main-text {
       font-size: 6vw;
     }
@@ -77,7 +81,7 @@
       font-size: 1.5vw;
     }
 
-    /* For tablets and medium screens */
+    /* For tablets */
     @media screen and (max-width: 1024px) {
       .main-text {
         font-size: 8vw;
@@ -87,20 +91,20 @@
       }
     }
 
-    /* For mobile devices (small screens) */
+    /* For mobile phones */
     @media screen and (max-width: 768px) {
       .main-text {
-        font-size: 10vw; /* Larger text for mobile */
+        font-size: 10vw;
       }
       .small-text {
         font-size: 3vw;
       }
     }
 
-    /* For very small mobile devices */
+    /* For very small mobile phones */
     @media screen and (max-width: 480px) {
       .main-text {
-        font-size: 12vw; /* Very large for readability on small screens */
+        font-size: 12vw;
       }
       .small-text {
         font-size: 4vw;
@@ -112,7 +116,7 @@
 <body>
   <div class="gradient-overlay"></div>
   <div class="main-text">
-    "Have a lovely night munchkin❤️."
+    Have a lovely night munchkin❤️.
   </div>
   <div class="small-text">
     dreams.com

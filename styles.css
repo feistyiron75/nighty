@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Sentinel:wght@300&display=swap');
+
+/* Body and layout styles */
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-family: 'Sentinel', serif;
+  overflow: hidden;
+  position: relative;
+}
+
+body {
+  background: url('image.jpg') no-repeat center center fixed;
+  background-size: cover;
+}
+
+/* Title at top center */
+.title-text {
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: 'Adelle', serif;
+  font-size: 2vw; /* Responsive size */
+  color: black;
+  z-index: 3;
+}
+
+/* Main gradient with soft blending and less brightness */
+.gradient-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, rgba(255,255,255,0.5), rgba(255,0,0,0.4), rgba(255,105,180,0.3), rgba(0,0,255,0.2));
+  background-size: 300% 300%; /* Enlarge background for smoother transitions */
+  opacity: 0.4; /* Softer gradient effect */
+  animation: flowColors 15s ease infinite;
+  z-index: 1;
+}
+
+@keyframes flowColors {
+  0% { background-position: 0% 0%; }
+  25% { background-position: 50% 50%; }
+  50% { background-position: 100% 100%; }
+  75% { background-position: 50% 50%; }
+  100% { background-position: 0% 0%; }
+}
+
+/* Main text styles */
+.main-text {
+  position: relative;
+  color: black;
+  text-align: center;
+  z-index: 2;
+  animation: blink 3s infinite ease-in-out, strobe 2s infinite alternate;
+  padding: 0 10px;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+@keyframes strobe {
+  0%, 100% { text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.7); }
+  50% { text-shadow: 0px 0px 25px rgba(0, 0, 0, 0.9); }
+}
+
+/* Small text styles */
+.small-text {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  z-index: 3;
+  color: black;
+}
+
+/* Responsive text sizes for large screens */
+.main-text {
+  font-size: 6vw;
+}
+
+.small-text {
+  font-size: 1.5vw;
+}
+
+/* For tablets */
+@media screen and (max-width: 1024px) {
+  .main-text {
+    font-size: 8vw;
+  }
+  .small-text {
+    font-size: 2.5vw;
+  }
+}
+
+/* For mobile phones */
+@media screen and (max-width: 768px) {
+  .main-text {
+    font-size: 10vw;
+  }
+  .small-text {
+    font-size: 3vw;
+  }
+}
+
+/* For very small mobile phones */
+@media screen and (max-width: 480px) {
+  .main-text {
+    font-size: 12vw;
+  }
+  .small-text {
+    font-size: 4vw;
+}
